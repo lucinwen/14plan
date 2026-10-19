@@ -1,0 +1,17 @@
+# 容易包含个人或项目敏感数据的本地工作产物
+.env
+.env.*
+*.pem
+*.key
+*.p12
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+# 本地运行结果、非公开资料和私有日记请勿提交
+private/
+secrets/
+recordings/
+raw-data/
