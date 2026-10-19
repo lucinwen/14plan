@@ -72,3 +72,27 @@ S -.支持.-> E
 - **一级（认知）**：理解适用场景与边界，知道哪些模块需要专家协作。SAR 细分算法、底层控制、全套 XR 标定等按时间分配。
 
 > 目标不是在 14 天把所有知识做到三级，而是让简历最核心的技术主线达到三级，其他技术具备诚实且可追问的认知。
+
+## 5. v2 新增：机器学习策略真正需要的“环境任务契约”
+
+> 对具身训练与验证，生成环境只解决一部分工作；要让策略/控制器“能用”，至少明确以下字段：
+
+| 层次 | 示例字段 | 谁负责？ | 面试高频追问 |
+|---|---|---|---|
+| 场景（Scene） | rooms/doors/objects, metric frame, collision geometry | 环境构建与物理资产 | 尺寸、单位、碰撞、门洞接面是否正确？ |
+| 任务（Task） | initial predicates, goal, constraints | 任务/规划设计 | 任务完成条件如何定义？ |
+| 机器人（Robot） | joint limits, URDF, end-effector, robot capabilities | 机器人模型/控制 | 能力与空间要求是否匹配？ |
+| 观测（Observation） | RGB-D、状态/关节、时间戳、可见性 | 传感器与状态估计 | 机器人看见什么，不能假设全知状态？ |
+| 动作（Action） | 关节/末端目标，持续时间，反馈 | 控制器/策略 | 谁从任务动作得到可执行控制？ |
+| 训练（Learning） | reward, resets, terminations, dataset, episode | 学习任务 / Isaac Lab | 奖励、重置、成功率怎样不泄漏？ |
+| 评测（Evaluation） | task_id, seed, success, error, baseline | 实验与评测工具 | 怎样公平证明方法增益？ |
+
+特别注意：[Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/index.html) 与 [Isaac Lab](https://docs.nvidia.com/learning/physical-ai/getting-started-with-isaac-lab/latest/isaac-lab-basics/01-the-isaac-platform.html) 不是同一个职责。
+
+## 6. v2 新增：世界模型概念警戒线
+
+“世界模型”至少有两种常见用法：
+- 你的 **符号/结构化环境模型**：几何、空间图、门状态、任务谓词。是工程数据表达，不能因用到了 LLM 就称为已训练的世界预测模型。
+- 学习型 **动态世界模型**：从观测和行动预测未来状态/视觉/潜变量，常用于规划/策略学习；不等于带门房间图，也不等于 3DGS。
+
+R18 的 π0、[LeRobot](https://huggingface.co/docs/lerobot/index) 与 [MIT Task-and-Motion Planning](https://manipulation.mit.edu/) 适用于不同系统层级。能说清差异比只追求新术语更重要。

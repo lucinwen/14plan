@@ -1,4 +1,4 @@
-# 容易包含个人或项目敏感数据的本地工作产物
+# 个人/企业敏感信息：此仓库当前 public
 .env
 .env.*
 *.pem
@@ -10,8 +10,12 @@ __pycache__/
 venv/
 .DS_Store
 Thumbs.db
-# 本地运行结果、非公开资料和私有日记请勿提交
 private/
+PRIVATE/
 secrets/
 recordings/
 raw-data/
+LOGS/
+EVIDENCE_PRIVATE/
+.local/
+*.secret.md
