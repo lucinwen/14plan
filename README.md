@@ -124,7 +124,7 @@ flowchart TD
 ```bash
 python scripts/check_plan.py
 python -m unittest discover -s minilab/tests -v
-python -m minilab.validate --demo
+python -m minilab.validate
 # 有可安装依赖时才运行：pip install -r minilab/requirements.txt && python -m minilab.z3_demo
 ```
 若学习已经在别处开始，不要把 PROGRESS.md 的0小时当成真实学习0小时；它只是仓库未同步。

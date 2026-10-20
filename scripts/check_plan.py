@@ -146,6 +146,31 @@ def check() -> list[str]:
         if "未运行" not in guide_text and "未实测" not in guide_text:
             errors.append(f"Day {id_}: no unverified-result warning")
     
+    # Final tutorial QA: avoid recycled follow-ups and impossible interview timers.
+    repeated = (
+        "如果输入、观测可靠性、机器人配置或预算改变，哪些假设可能失效？",
+        "举一个改变初始条件后会失败的反例，并说谁负责报告或修复。",
+        "哪一种输入改变会让这条回答不再成立？需什么验证来确认？",
+    )
+    for number in range(1, 15):
+        answer = ROOT / "TASK_GUIDES" / "ANSWERS" / f"day-{number:02d}.md"
+        if not answer.is_file():
+            continue
+        data = answer.read_text(encoding="utf-8")
+        for phrase in repeated:
+            if phrase in data:
+                errors.append(f"Answer for Day {number:02d} still uses a generic follow-up")
+    for number in (13, 14):
+        tutorial = ROOT / "TASK_GUIDES" / f"day-{number:02d}.md"
+        if not tutorial.is_file():
+            continue
+        body = tutorial.read_text(encoding="utf-8")
+        needed = 2 if number == 14 else 1
+        if body.count("2. **45分钟｜认真操作：**") < needed:
+            errors.append(f"Day {number:02d}: missing truly timed 45-minute interview block")
+    if "--demo" in (ROOT / "README.md").read_text(encoding="utf-8"):
+        errors.append("README uses unsupported minilab.validate --demo option")
+
     matcher = re.compile(r"(?<!!)\[[^\]\n]*\]\(([^)]+)\)")
     md_files = list(ROOT.rglob("*.md"))
     for md in md_files:
