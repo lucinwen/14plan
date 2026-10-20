@@ -25,6 +25,40 @@ def check() -> list[str]:
         if not (ROOT / rel).is_file():
             errors.append(f"Missing required file: {rel}")
 
+    # Every original resource has a real child tutorial, not only a raw link.
+    guide_dir = ROOT / "STUDY_GUIDES"
+    index = guide_dir / "README.md"
+    if not index.is_file():
+        errors.append("Missing independent study-guide index")
+    for prefix, total in (("R", 22), ("P", 9)):
+        for number in range(1, total + 1):
+            tag = f"{prefix}{number:02d}"
+            path = guide_dir / f"{tag}.md"
+            if not path.is_file():
+                errors.append(f"Missing resource tutorial: {tag}")
+            elif len(path.read_text(encoding="utf-8").strip()) < 700:
+                errors.append(f"Resource tutorial too short to guide study: {tag}")
+
+    for day in days:
+        if not day.is_file():
+            continue
+        doc = day.read_text(encoding="utf-8")
+        if "../STUDY_GUIDES/" not in doc:
+            errors.append(f"Daily page missing child-tutorial link: {day.name}")
+        if "先打开资源子教程" not in doc and "资源子教程" not in doc:
+            errors.append(f"Daily page lacks clear tutorial entry: {day.name}")
+
+    # Catch former incorrect Bilibili links before reintroducing confusion.
+    resources = (ROOT / "RESOURCES.md").read_text(encoding="utf-8")
+    for should_exist in (
+        "BV1zi421v7Dr",  # 3DGS first episode, not old fourth episode
+        "BV1t34y1F7sV",  # SAR lecture 1
+        "BV1VC4y1N7Uy",  # SAR lecture 3
+        "BV1b4hSe4EEV",  # actual breathing demo, not Capon angle demo
+    ):
+        if should_exist not in resources:
+            errors.append(f"RESOURCES.md missing corrected video: {should_exist}")
+
     matcher = re.compile(r"(?<!!)\[[^\]\n]*\]\(([^)]+)\)")
     md_files = list(ROOT.rglob("*.md"))
     for md in md_files:
@@ -54,4 +88,4 @@ if __name__ == "__main__":
         for item in issues:
             print(" -", item)
         raise SystemExit(1)
-    print("PASS: 14 day pages, admissions deadlines and internal Markdown paths")
+    print("PASS: 14 daily pages, 31 child tutorials, corrected courses and internal Markdown paths")
