@@ -1,4 +1,4 @@
-# 具身智能特训营｜14 天 × 10 小时面试冲刺（2026 课程严选 v4 · 逐资源教学）
+# 具身智能特训营｜14 天 × 10 小时面试冲刺（2026 V5 · 全任务教学版）
 
 > **日期：2026-10-20 → 2026-11-02 | 140 有效学习小时 | 面试：11月初**
 >
@@ -14,6 +14,13 @@
 **今天的路径**：[Day01](DAILY/day-01.md) → [R01 Modern Robotics 精准分P](STUDY_GUIDES/R01.md) → [R16 MIT点云/坐标定向阅读](STUDY_GUIDES/R16.md) → 回Day01做练习。**R01今天只看约23分钟原片，其余时间用来暂停做题和闭卷验收，不必学完43集。**
 
 **[全部31份独立资源教程](STUDY_GUIDES/README.md)**：22份R类课程/工具 + 9份P类论文/研究；逐份列明确章节、跳过项、具体步骤、案例与验收。每日计划只提供子教程入口，不把全部教学堆成一大页。
+
+## V5｜打开今天的任务手册，照着做完10小时
+**[14天完整任务操作手册](TASK_GUIDES/README.md) + 14份独立[参考答案与排错](TASK_GUIDES/README.md)** 已就位。原有 [31份资料学习子教程](STUDY_GUIDES/README.md) 教你“看哪节、怎么学”；新增 TASK_GUIDES 教你“每段怎么开始、练什么、留什么、哪里错”。**它们严格使用原DAILY时间预算**，不是另一套新计划。
+
+今天直接按 [Day01总计划](DAILY/day-01.md) → [Day01手把手操作手册](TASK_GUIDES/day-01.md) → [R01精准视频](STUDY_GUIDES/R01.md) / [R16 MIT小节](STUDY_GUIDES/R16.md) → 本人练习 → **完成后才打开[Day01参考答案](TASK_GUIDES/ANSWERS/day-01.md)**。
+
+**请勿上传**个人报名回执、真实录音、腾讯内部项目/私人代码至Public仓库；新学习练习≠历史实习或科研成果。
 
 ## 今天就这样开始
 
@@ -52,6 +59,7 @@ flowchart TD
 
 | 我想做什么 | 入口 | 时间/用途 |
 |---|---|---|
+| 今天10小时每一步怎么做、独立答案怎么核对 | [14天任务操作与答案](TASK_GUIDES/README.md) | 对齐每日七/八时间块 |
 | 每份视频/文档到底该学什么 | [31份独立资源教程](STUDY_GUIDES/README.md) | 先点当天必修，跳过全集 |
 | 对照 MANSION 与同名 SceneWeaver | [RELATED_WORK.md](RELATED_WORK.md) | Day08，核心科研方法比较 |
 | 报名与跨学科面试 | [ADMISSION_PREP.md](ADMISSION_PREP.md) | 10/27–10/29 必须跟进 |

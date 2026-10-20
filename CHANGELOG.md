@@ -40,3 +40,10 @@
 - 所有14份DAILY页面都改为有子教程链接，每份详细说明所学章节、要跳过的部分、练习和验收。
 - 用真实B站目录核对R01、R02、R09、R13、R15、MIT R16，并修正R11、R14、R22错误入口。
 - README、RESOURCES、PLAN_14_DAYS均指向一键可进入的教程目录；自动测试验证教程完整性和链接。
+
+
+## v5｜2026-10-20 · 完整14天任务操作教学
+- 新增 [TASK_GUIDES/README.md](TASK_GUIDES/README.md)，14份逐时间段任务操作手册和14份独立参考答案/排错，与原计划预算对应（Day01–13每一天7段、Day14 8段）。
+- 新增 [TASK_GUIDES/WORKLOG_TEMPLATE.md](TASK_GUIDES/WORKLOG_TEMPLATE.md) 用于本地分阶段记录预测、本人操作、实测或未运行、反例与复盘。
+- 所有DAILY、主README、宏观计划、学习协议、进度与Codex教练均已接入新操作层；旧资源教程和全部Git历史保留。
+- CI自动验证阶段数、时间预算、答案配对、Markdown链接与原MiniLab/Z3测试。
