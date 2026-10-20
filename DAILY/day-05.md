@@ -14,7 +14,15 @@
 - 地图、定位、代价地图、规划器、控制器、恢复行为
 - 机器人动作的状态反馈与执行超时/取消
 
-## 实际上要学的课和章节
+## 开始学习：先打开资源子教程（不要自己乱选整套课程）
+
+- **[R02 子教程](../STUDY_GUIDES/R02.md)**：必修：ROS2 P1/P11/P16。
+- **[R05 子教程](../STUDY_GUIDES/R05.md)**：必修：Nav2责任链。
+
+**使用顺序**：先做今日前测/复习 → 点开标“必修”的子教程 → 按教程指示看指定分P或文档小节 → 在教程里暂停做题 → 完成今日验收。选修/进阶材料有疑点或学有余力时才开；**不是今天必须看完的清单**。
+**若视频目录/版本不一致**，以子教程的“来源核验/官方入口”说明为准，切勿猜章节号。
+
+## 原始课程/论文入口（具体怎么学，以子教程为准）
 
 - [R02 · 优先第1、8、11、16节≈98min；URDF 第17节按需补](https://www.bilibili.com/video/BV16B4y1Q7jQ/)
 - [R05 · 概述 Planner/Controller/Recovery，不钻部署细节](https://github.com/ros-navigation/docs.nav2.org/blob/rolling/docs/getting_started/navigation_concepts/navigation_servers.md)

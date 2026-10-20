@@ -14,7 +14,16 @@ domain 定义谓词和动作，problem 定义初始状态和目标；FSM 适合�
 - 任务规划与运动规划的组合 TAMP、失败原因分类
 - 门锁/钥匙/空间连通作为不同状态约束
 
-## 实际上要学的课和章节
+## 开始学习：先打开资源子教程（不要自己乱选整套课程）
+
+- **[R04 子教程](../STUDY_GUIDES/R04.md)**：必修：PDDL动作条件。
+- **[R16 子教程](../STUDY_GUIDES/R16.md)**：必修：MIT2022 P21 TAMP。
+- **[R20 子教程](../STUDY_GUIDES/R20.md)**：选读：任务成功谓词。
+
+**使用顺序**：先做今日前测/复习 → 点开标“必修”的子教程 → 按教程指示看指定分P或文档小节 → 在教程里暂停做题 → 完成今日验收。选修/进阶材料有疑点或学有余力时才开；**不是今天必须看完的清单**。
+**若视频目录/版本不一致**，以子教程的“来源核验/官方入口”说明为准，切勿猜章节号。
+
+## 原始课程/论文入口（具体怎么学，以子教程为准）
 
 - [R16 · 找 MIT Lecture21 Task and Motion Planning，优先看一个完整讲次（约80min）](https://www.bilibili.com/video/BV1dB4y1R7bS/)
 - [R04 · domain/problem/action/precondition/effect 约25min](https://planning.wiki/ref/pddl/domain)

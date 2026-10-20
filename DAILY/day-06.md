@@ -14,7 +14,16 @@ Isaac Sim 负责建模/物理/传感/机器人操作；Isaac Lab 定义机器人
 - 机器人模型、碰撞层、传感器、控制周期、真实标注与任务判据
 - Sim2Real、可复现评测、场景随机性和失败记录
 
-## 实际上要学的课和章节
+## 开始学习：先打开资源子教程（不要自己乱选整套课程）
+
+- **[R06 子教程](../STUDY_GUIDES/R06.md)**：必修：Isaac Sim物理环境。
+- **[R19 子教程](../STUDY_GUIDES/R19.md)**：必修：Isaac Lab任务合同。
+- **[R16 子教程](../STUDY_GUIDES/R16.md)**：选看：MIT仿真相关案例。
+
+**使用顺序**：先做今日前测/复习 → 点开标“必修”的子教程 → 按教程指示看指定分P或文档小节 → 在教程里暂停做题 → 完成今日验收。选修/进阶材料有疑点或学有余力时才开；**不是今天必须看完的清单**。
+**若视频目录/版本不一致**，以子教程的“来源核验/官方入口”说明为准，切勿猜章节号。
+
+## 原始课程/论文入口（具体怎么学，以子教程为准）
 
 - [R06 · Hello World/Robot、碰撞、传感基本结构≤50min](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/index.html)
 - [R19 · Isaac Lab的 obs/action/reward/reset、与Isaac Sim分工≤55min](https://docs.nvidia.com/learning/physical-ai/getting-started-with-isaac-lab/latest/isaac-lab-basics/01-the-isaac-platform.html)
