@@ -59,6 +59,77 @@ def check() -> list[str]:
         if should_exist not in resources:
             errors.append(f"RESOURCES.md missing corrected video: {should_exist}")
 
+    # V5: task-operations manuals must match each 10-hour DAILY schedule precisely.
+    table_re = re.compile(
+        r"^\| (\d{2}:\d{2}–\d{2}:\d{2}) \| (\d+(?:\.\d+)?)h \| .* \|$",
+        re.MULTILINE,
+    )
+    stages_re = re.compile(
+        r"^### 第(\d+)阶段｜(\d{2}:\d{2}–\d{2}:\d{2})（(\d+)分钟）$",
+        re.MULTILINE,
+    )
+    task_index = ROOT / "TASK_GUIDES" / "README.md"
+    worklog = ROOT / "TASK_GUIDES" / "WORKLOG_TEMPLATE.md"
+    if not task_index.is_file():
+        errors.append("Missing TASK_GUIDES/README.md")
+    if not worklog.is_file():
+        errors.append("Missing TASK_GUIDES/WORKLOG_TEMPLATE.md")
+    for day_num in range(1, 15):
+        id_ = f"{day_num:02d}"
+        daily = ROOT / "DAILY" / f"day-{id_}.md"
+        guide = ROOT / "TASK_GUIDES" / f"day-{id_}.md"
+        answer = ROOT / "TASK_GUIDES" / "ANSWERS" / f"day-{id_}.md"
+        if not guide.is_file():
+            errors.append(f"Missing TASK_GUIDES/day-{id_}.md")
+            continue
+        if not answer.is_file():
+            errors.append(f"Missing TASK_GUIDES/ANSWERS/day-{id_}.md")
+            continue
+        guide_text = guide.read_text(encoding="utf-8")
+        answer_text = answer.read_text(encoding="utf-8")
+        if len(guide_text.strip()) < 1800:
+            errors.append(f"Day {id_} task manual too sparse")
+        if len(answer_text.strip()) < 900:
+            errors.append(f"Day {id_} answer manual too sparse")
+        if f"ANSWERS/day-{id_}.md" not in guide_text:
+            errors.append(f"Day {id_} guide does not link to its answer")
+        if f"../day-{id_}.md" not in answer_text:
+            errors.append(f"Day {id_} answer missing return link")
+        if not daily.is_file():
+            continue
+        daily_text = daily.read_text(encoding="utf-8")
+        if f"../TASK_GUIDES/day-{id_}.md" not in daily_text:
+            errors.append(f"Day {id_} DAILY missing task guide link")
+        if f"../TASK_GUIDES/ANSWERS/day-{id_}.md" not in daily_text:
+            errors.append(f"Day {id_} DAILY missing answer link")
+        expected = table_re.findall(daily_text)
+        stages = stages_re.findall(guide_text)
+        target_count = 8 if day_num == 14 else 7
+        if len(expected) != target_count or len(stages) != target_count:
+            errors.append(
+                f"Day {id_}: stage count expected {target_count}, got "
+                f"schedule={len(expected)}, tutorial={len(stages)}"
+            )
+            continue
+        total = 0
+        for i, ((time_range, hours), (stage_n, stage_range, minutes)) in enumerate(
+            zip(expected, stages), 1
+        ):
+            delta_minutes = round(float(hours) * 60)
+            total += delta_minutes
+            if (
+                int(stage_n) != i
+                or time_range != stage_range
+                or int(minutes) != delta_minutes
+            ):
+                errors.append(
+                    f"Day {id_} stage {i}: schedule and task-guide time mismatch"
+                )
+        if total != 600:
+            errors.append(f"Day {id_}: total is {total} min, expected 600")
+        if "未运行" not in guide_text and "未实测" not in guide_text:
+            errors.append(f"Day {id_}: no unverified-result warning")
+    
     matcher = re.compile(r"(?<!!)\[[^\]\n]*\]\(([^)]+)\)")
     md_files = list(ROOT.rglob("*.md"))
     for md in md_files:
@@ -88,4 +159,4 @@ if __name__ == "__main__":
         for item in issues:
             print(" -", item)
         raise SystemExit(1)
-    print("PASS: 14 daily pages, 31 child tutorials, corrected courses and internal Markdown paths")
+    print("PASS: 14 daily pages, 31 resources, 14 task/answer pairs, 600 min/day and Markdown paths")
