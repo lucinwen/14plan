@@ -47,3 +47,12 @@
 - 新增 [TASK_GUIDES/WORKLOG_TEMPLATE.md](TASK_GUIDES/WORKLOG_TEMPLATE.md) 用于本地分阶段记录预测、本人操作、实测或未运行、反例与复盘。
 - 所有DAILY、主README、宏观计划、学习协议、进度与Codex教练均已接入新操作层；旧资源教程和全部Git历史保留。
 - CI自动验证阶段数、时间预算、答案配对、Markdown链接与原MiniLab/Z3测试。
+
+
+## v6｜2026-10-20 · 所有任务的例题、答案与时间一致性复核
+- **保留现有v1–v5代码和教学结构**，以现有14份TASK_GUIDES和14份ANSWERS为基底逐份修订，未新开一套重复计划。
+- 14天均补充领域对应的可计算/可画图/可执行示范：几何/SMT/PDDL/运动学/ROS/IsaacLab/IL-RL/论文对照/语音/数字人/FMCW/SAR/XR/模拟面试。
+- 修复具体时间不可能完成的指令：R01 Day04七个短片约36分钟、R11前两集约49分钟、R13前三集约53分钟；Day09/13/14至少45分钟真实计时模拟。
+- 清理重复通用答案，改成有针对性的后续追问、具体数值答案和错误定位；更明确“新学习实验 ≠ 历史个人贡献”。
+- 修正README曾误写的`python -m minilab.validate --demo`为可运行的`python -m minilab.validate`。
+- 新增自动质量守卫和沿用原有14日×600分钟的导航/单测检查。Git历史和旧版链接全部保留。

@@ -1,4 +1,4 @@
-# 具身智能特训营｜14 天 × 10 小时面试冲刺（2026 V5 · 全任务教学版）
+# 具身智能特训营｜14 天 × 10 小时面试冲刺（2026 V6 · 逐题实操与答案质量强化版）
 
 > **日期：2026-10-20 → 2026-11-02 | 140 有效学习小时 | 面试：11月初**
 >
@@ -15,7 +15,13 @@
 
 **[全部31份独立资源教程](STUDY_GUIDES/README.md)**：22份R类课程/工具 + 9份P类论文/研究；逐份列明确章节、跳过项、具体步骤、案例与验收。每日计划只提供子教程入口，不把全部教学堆成一大页。
 
-## V5｜打开今天的任务手册，照着做完10小时
+## V6｜14天已完成逐题实操与参考答案质量强化
+现有**14份任务手册 + 14份答案**不是只有文件：本轮逐日补入可计算案例、失败诊断、正确的课程学习时间、完整的模拟面试计时。不要一次打开全部资料。
+
+**唯一学习路径**：[今天的Day计划](DAILY/day-01.md) → [Day01任务操作手册](TASK_GUIDES/day-01.md) → [R01/R16指定课程](STUDY_GUIDES/README.md) → 自己做 → [Day01答案](TASK_GUIDES/ANSWERS/day-01.md) → 本地记录。**先预测和练习，再看答案**。
+Day01立即开始的10分钟：画A房间—门—B房间的图，把门宽0.45m与机器人宽0.6m标出，预测“图连通但不可通行”的具体层级，然后再看课。
+
+## V5｜原有全任务教学结构
 **[14天完整任务操作手册](TASK_GUIDES/README.md) + 14份独立[参考答案与排错](TASK_GUIDES/README.md)** 已就位。原有 [31份资料学习子教程](STUDY_GUIDES/README.md) 教你“看哪节、怎么学”；新增 TASK_GUIDES 教你“每段怎么开始、练什么、留什么、哪里错”。**它们严格使用原DAILY时间预算**，不是另一套新计划。
 
 今天直接按 [Day01总计划](DAILY/day-01.md) → [Day01手把手操作手册](TASK_GUIDES/day-01.md) → [R01精准视频](STUDY_GUIDES/R01.md) / [R16 MIT小节](STUDY_GUIDES/R16.md) → 本人练习 → **完成后才打开[Day01参考答案](TASK_GUIDES/ANSWERS/day-01.md)**。
@@ -100,7 +106,7 @@ flowchart TD
 
 ## 每日 10 小时怎么花
 
-大部分学习日：**45分钟 D+1/D+3/D+7 复习 + 1h45m 精选视频/官方文档 + 2h 原理 + 2h45m 简历案例 + 1h 最小验证 + 45分钟闭卷复述 + 1h 技术追问 = 10h**。
+**每天都有10小时，但配比因知识点而不同。** Z3要多做求解、运动学要手算、SAR要核观测证据、模拟面试要真的计时。以当天DAILY时间表及其TASK_GUIDES为准，不使用通用模板。
 
 **Day14 特殊：全部10h用于面试和材料真实核查，不要再强制学习新课。** 休息、餐饮、睡眠不计入有效10h；如精力下降先保障效果，不强行堆时长。
 
@@ -117,7 +123,7 @@ flowchart TD
 ```bash
 python scripts/check_plan.py
 python -m unittest discover -s minilab/tests -v
-python -m minilab.validate --demo
+python -m minilab.validate
 # 有可安装依赖时才运行：pip install -r minilab/requirements.txt && python -m minilab.z3_demo
 ```
 若学习已经在别处开始，不要把 PROGRESS.md 的0小时当成真实学习0小时；它只是仓库未同步。

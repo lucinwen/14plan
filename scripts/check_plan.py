@@ -130,6 +130,35 @@ def check() -> list[str]:
         if "未运行" not in guide_text and "未实测" not in guide_text:
             errors.append(f"Day {id_}: no unverified-result warning")
     
+    # V6 content sanity: each day needs a domain-specific worked practice
+    # and original timers must not claim more practice than their stage budget.
+    generic_phrases = (
+        "如果输入、观测可靠性、机器人配置或预算改变，哪些假设可能失效？",
+        "举一个改变初始条件后会失败的反例，并说谁负责报告或修复。",
+        "哪一种输入改变会让这条回答不再成立？需什么验证来确认？",
+    )
+    for day_num in range(1, 15):
+        ident = f"{day_num:02d}"
+        guide = ROOT / "TASK_GUIDES" / f"day-{ident}.md"
+        answer = ROOT / "TASK_GUIDES" / "ANSWERS" / f"day-{ident}.md"
+        if not guide.is_file() or not answer.is_file():
+            continue
+        guide_content = guide.read_text(encoding="utf-8")
+        answer_content = answer.read_text(encoding="utf-8")
+        if "## 强化练习" not in guide_content:
+            errors.append(f"Day {ident}: missing worked exercise")
+        if f"## Day{ident}" not in answer_content:
+            errors.append(f"Day {ident}: missing specific answer explanation")
+        for phrase in generic_phrases:
+            if phrase in answer_content:
+                errors.append(f"Day {ident}: repeated generic answer instead of specific follow-up")
+    interview13 = ROOT / "TASK_GUIDES" / "day-13.md"
+    interview14 = ROOT / "TASK_GUIDES" / "day-14.md"
+    if interview13.is_file() and "2. **45分钟｜认真操作：" not in interview13.read_text(encoding="utf-8"):
+        errors.append("Day 13 needs an actual 45min interview block")
+    if interview14.is_file() and interview14.read_text(encoding="utf-8").count("2. **45分钟｜认真操作：") < 2:
+        errors.append("Day 14 needs two real 45min interview blocks")
+
     matcher = re.compile(r"(?<!!)\[[^\]\n]*\]\(([^)]+)\)")
     md_files = list(ROOT.rglob("*.md"))
     for md in md_files:
@@ -159,4 +188,4 @@ if __name__ == "__main__":
         for item in issues:
             print(" -", item)
         raise SystemExit(1)
-    print("PASS: 14 daily pages, 31 resources, 14 task/answer pairs, 600 min/day and Markdown paths")
+    print("PASS: all 14 daily pages, 31 resources, 14 deep worked guides/answers, real 45min mocks and 600 min/day")
