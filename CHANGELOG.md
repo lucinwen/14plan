@@ -24,3 +24,12 @@
 - 复核覆盖**本次候选资源和公开检索**，不是对 B站/YouTube 全网逐帧试看或终极排名。
 - 个别 B站链接返回 412，不声称已播放验证；用公开可检索的标题与目录作索引，原始论文、大学与工具官方链接作为主证据。
 - 仓库为 **Public**；不要上传个人电话、邮箱、企业内部源代码、私密简历证据、真实传感/人脸/健康数据。
+## v3｜2026-10-20 · 面试选拔定向实施（保留 v1/v2）
+- 旧的不可变版本：**v1** [6d83f525](https://github.com/venividici/14plan/tree/6d83f52571913a5f8cdb9c6984e9599b4330882c) / **v2** [1604d723](https://github.com/venividici/14plan/tree/1604d723d83cfa21b734aaf6b942822a6af30b80)。
+- 新增 [RELATED_WORK.md](RELATED_WORK.md)：MANSION(CVPR2026)、另一个同名 SceneWeaver(NeurIPS2025)、Holodeck(CVPR2024)及个人研究的证据对照。
+- 新增 [ADMISSION_PREP.md](ADMISSION_PREP.md)：10/27材料冻结、建议10/28提交、10/29核验、10/30用户确认截止日；提前模拟面试。
+- 所有14天的学习页面保留，Day1–13改成**主题差异化10小时表**；Day8新增论文比较，Day9首轮完整模拟。
+- 新增 [minilab/](minilab/)（受限二维几何+图+任务状态检查、可选Z3例子）与17项单元测试；它是**新学习练习，不是腾讯或科研原项目成果**。
+- 新增 [scripts/check_plan.py](scripts/check_plan.py) 和 GitHub Actions；检查内部链接、14天文件、截止节点与minilab单元测试。
+- 更新课程/论文/题库（57→73问）/阶段考核/进度表。原有资源没有整体替换，保密与贡献边界继续生效。
+- 本版采用 PR [#1](https://github.com/venividici/14plan/pull/1) 进行审阅、CI和合并，保留 Git 历史与差异记录。
