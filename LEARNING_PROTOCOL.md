@@ -1,6 +1,6 @@
 # 两周高效学习协议：每天必须有“可证伪”的进步
 
-> **V5 跟学**：从 [DAILY](DAILY/) 找到今日计划，打开 [TASK_GUIDES](TASK_GUIDES/README.md) 的对应操作手册，按阶段做；知识卡点才点 [STUDY_GUIDES](STUDY_GUIDES/README.md)。保存第一次闭卷回答后，再看对应 ANSWERS，不要提前抄答案。
+> **V6 跟学**：从 [DAILY](DAILY/) 找到今日计划，打开 [TASK_GUIDES](TASK_GUIDES/README.md) 的对应操作手册，按阶段做；知识卡点才点 [STUDY_GUIDES](STUDY_GUIDES/README.md)。保存第一次闭卷回答后，再看对应 ANSWERS，不要提前抄答案。若不明白练习需要交什么，先看 [Day01填好的合成示例](TASK_GUIDES/WORKLOG_EXAMPLE.md)；遇到阻塞按 [HELP](TASK_GUIDES/HELP.md) 逐项求救，不新开整套课程。
 
 目标是在 140 有效学习小时内，面对具身特训营技术面试做到：核心可推理、外围能解释、历史经历可举证。无须重新练 Python/UE/PCG 基础。
 
