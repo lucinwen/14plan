@@ -16,9 +16,10 @@
 
 ## 实际上要学的课和章节
 
-- [R20 · 读 BEHAVIOR 任务及可交互物体/评测结构≤40min](https://behavior.stanford.edu/)
-- [R16 · 回看任务规划、感知/仿真接口≤35min](https://manipulation.mit.edu/)
-- [PAPER · 看“策略依赖什么输入”的原始研究示例≤20min](https://diffusion-policy.cs.columbia.edu/)
+- [MANSION · CVPR 2026 原文与方法图，约55min](https://openaccess.thecvf.com/content/CVPR2026/html/Che_MANSION_Multi-floor_lANguage-to-3D_Scene_generatIOn_for_loNg-horizon_tasks_CVPR_2026_paper.html)
+- [同名 SceneWeaver · NeurIPS 2025 原始方法与代码，约35min](https://scene-weaver.github.io/)
+- [Holodeck · CVPR 2024 论文摘要/约束与对照，约15min](https://openaccess.thecvf.com/content/CVPR2024/html/Yang_Holodeck_Language_Guided_Generation_of_3D_Embodied_AI_Environments_CVPR_2024_paper.html)
+- [RELATED_WORK.md](../RELATED_WORK.md) 和 [PAPER_READING.md](../PAPER_READING.md) 进一步核对实验；[BEHAVIOR-1K](https://behavior.stanford.edu/) 作为任务基线补充。
 
 **时间规则：**当天资源学习限时约 105 分钟，优先重点。相关课程如果完整一讲很长可以截取与任务相关的段落；剩余内容按需作为原理阅读。视频网站临时失效，使用 [RESOURCES.md](../RESOURCES.md) 中对应官方链接。**视频的检索确认不等于本人已看/完整播放。**
 
@@ -26,21 +27,25 @@
 
 | 学习时段（累计有效小时） | 时长 | 任务 |
 |---|---:|---|
-| 00:00–00:45 | 0.75h | 前测（Day1）或 D+1/D+3/D+7 闭卷复习 |
-| 00:45–02:30 | 1.75h | 精选主课/官方文档：仅完成下方指定内容 |
-| 02:30–04:30 | 2h | 自己解释原理：方程、信息流、数据表示和局限 |
-| 04:30–07:15 | 2.75h | 简历项目案例：问题、备选方法、设计、反例 |
-| 07:15–08:15 | 1h | 最小验证：合成测试或明确的系统契约 |
-| 08:15–09:00 | 0.75h | 闭卷复述：录音并更正错误 |
-| 09:00–10:00 | 1h | 递进技术追问、证据整理与错题记录 |
+| 00:00–00:45 | 0.75h | D+1/3/7复习，确认之前评分薄弱项 |
+| 00:45–02:30 | 1.75h | MANSION/同名SceneWeaver/Holodeck原始方法与实验 |
+| 02:30–04:45 | 2.25h | 按RELATED_WORK五维比方法、对照与证据范围 |
+| 04:45–06:30 | 1.75h | 腾讯两期/个人SceneWeaver真实贡献高层说明（不泄密） |
+| 06:30–07:45 | 1.25h | minilab对照方案：相同任务/seed/预算与失败指标 |
+| 07:45–08:45 | 1h | 关闭资料回答Q61–63，90秒科研叙事 |
+| 08:45–10:00 | 1.25h | 小型模拟+10/27申请资料冻结与事实检查 |
 
 ## 带着真实问题学（案例）
 
-对 Genesis Scene/Tairos、无限画布、Einstein Layout、SceneWeaver 各写一张安全可公开的高层设计图，比较手工构建、可视化 PCG、约束生成和“可执行”验证的不同贡献。
+重点不是把自己的 SceneWeaver 写成已等价于 MANSION，而是比较 **MANSION、NeurIPS 2025 同名 SceneWeaver、Holodeck 与本人项目** 的问题、表示、生成和任务评测；再用已确认、未完成、未来假设三栏记录自身证据。腾讯项目只使用可披露的高层能力描述。
 
 ## 关键原理与最小验证
 
 设计一张公平对照表：相同资产池、相同任务与机器人、相同时间预算、相同评测脚本下对比合法率、成功率、修复时间；保留失败样例。
+
+**申请硬节点：** 10/27 核验并冻结正式材料；提前就相关工作和跨专业动机做第一轮模拟。详情：[ADMISSION_PREP.md](../ADMISSION_PREP.md)。
+
+**新验收：** ① 相关工作五维矩阵；② 两个失败反例；③ 一页个人贡献/团队结果边界表；④ 简历冻结状态。**任何论文方法对照都不等于自己复现成功。**
 
 ## 今日必须交出的证据（沿用原验收，且要可追踪）
 

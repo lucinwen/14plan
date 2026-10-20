@@ -14,6 +14,10 @@
 - 项目面：腾讯两段实习、INZ Lab、创业、Rove/AI Partner、交流经历
 - 入营目标、团队分工、真实证据、尚未验证的问题
 
+## 报名状态与真实性优先
+
+对照 [ADMISSION_PREP.md](../ADMISSION_PREP.md) 检查已提交材料、团队/本人/计划三栏是否与面试表述一致；不公开上传个人联系方式或报名回执。
+
 ## 实际上要学的课和章节
 
 - [CHECKPOINTS · 模拟面试时长与评分表](../CHECKPOINTS.md)
