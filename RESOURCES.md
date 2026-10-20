@@ -1,4 +1,4 @@
-# 精选课程与官方资料 v2 · 2026-10-19 复核
+# 精选课程与官方资料 v3 · 2026-10-19 复核
 
 > **核心原则**：**B 站负责解释直觉和展示案例，官方课程/原始论文负责核对原理，自己的实验和闭卷答辩负责证明理解。** Python、UE5、PCG 已有基础，不安排入门课。课程不能因为标题标注“2026最新”“天花板”就自动获得优先级。
 >
@@ -53,3 +53,13 @@
 5. **不强求安装重型平台**：GPU/系统/设备不明时阅读官方系统和案例，比耗费一整天配置环境更适合面试冲刺。
 
 详细替换理由请读 [COURSE_AUDIT.md](COURSE_AUDIT.md)；每日入口见 [DAILY/](DAILY/)。
+
+## v3｜空间生成方法与具身评测必读（Day08）
+| 编号 | 官方来源 | 精读位置 | 怎样验证自己真的懂 |
+|---|---|---|---|
+| **P6 MANSION** | [CVPR 2026 原文](https://openaccess.thecvf.com/content/CVPR2026/html/Che_MANSION_Multi-floor_lANguage-to-3D_Scene_generatIOn_for_loNg-horizon_tasks_CVPR_2026_paper.html) · [作者代码](https://github.com/AgibotGeneral/MANSION) | 摘要、生成框架、跨层约束、任务语义编辑和实验 | 区分布局生成、物理/可导航与真正长时程任务执行 |
+| **P7 同名 SceneWeaver** | [NeurIPS 2025 项目](https://scene-weaver.github.io/) · [官方代码](https://github.com/Scene-Weaver/SceneWeaver) | 工具化规划、场景合成、反思式迭代、导出和评测 | 说明**同名工作不是自己的项目**；比较修改与反馈证据 |
+| **P8 Holodeck** | [CVPR 2024 原文](https://openaccess.thecvf.com/content/CVPR2024/html/Yang_Holodeck_Language_Guided_Generation_of_3D_Embodied_AI_Environments_CVPR_2024_paper.html) | 语言→对象→空间关系约束→布局优化→导航应用 | 为什么关系满足不自动保证任务可执行 |
+| **P9 当前个人研究入口** | [个人项目状态](https://github.com/venividici/ue-scene-generation-research/blob/main/CURRENT_RESEARCH_STATUS.md) | 具体版本、真实组件、失败案例和研究目标 | 仅按**已取得可核验证据**描述完成度；不把目标当成果 |
+
+**播放核验规则**：官方论文/资料可作为权威备份；部分 B站链接只核验到标题/目录，未逐段实播。选择清楚的章节而非盲目刷完“最新课程”；每个 DAILY 页标明当天的停止条件。更多对照见 [RELATED_WORK.md](RELATED_WORK.md)。

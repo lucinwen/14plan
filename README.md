@@ -1,8 +1,14 @@
-# 具身智能特训营｜14 天 × 10 小时面试冲刺（2026 课程严选 v2）
+# 具身智能特训营｜14 天 × 10 小时面试冲刺（2026 课程严选 v3）
 
 > **日期：2026-10-20 → 2026-11-02 | 140 有效学习小时 | 面试：11月初**
 >
 > 已有 Python 开发、UE5 与 PCG 基础。**不重复补编程/引擎入门**；重点学空间约束、机器人学、真实机器人任务接口、多模态感知、科研评测与技术面试。
+
+## 这轮升级保留了什么、补上了什么
+原有 Python/UE5/PCG 免补、两条知识主线、14天课程、D+1/D+3/D+7、五次阶段检查、57题原题、v1/v2 Git 历史均保留。**新增**：真实文献方法对照、学习用可运行 mini lab、报名与跨学科申请专项、因主题变化的每日时段和自动静态检查。
+
+**报名硬节点（用户确认，表单仍以实际页面为准）**：10/27 确认材料并冻结 → **10/28 建议提交** → 10/29 保存与核验成功回执 → **10/30 截止**。面试日期尚不确定，因此**10/28开始完整模拟**，不要等 Day14。
+**这个仓库是 Public**。简历全文、手机号、面试录音、实习保密材料及个体化问答留在本地私有目录，不提交。
 
 ## 今天就这样开始
 
@@ -31,10 +37,19 @@ flowchart TD
 
 **核心区别**：空间图有连接 ≠ 实际有通路 ≠ 门可以开 ≠ 机器人有能力执行 ≠ 策略在仿真/现实中成功。
 
+## v3 新增入口（先收藏）
+- [研究方法对照 RELATED_WORK.md](RELATED_WORK.md)：MANSION / 同名 NeurIPS SceneWeaver / Holodeck / 个人在研 SceneWeaver；**项目名相同不等于工作相同**。
+- [报名和面试 ADMISSION_PREP.md](ADMISSION_PREP.md)：10/30 截止节点、跨学科竞争力、90秒 / 3分钟 / 5分钟表达与提前模拟。
+- [可运行的独立学习原型 minilab/](minilab/)：标准库规则检查 + 可选 Z3 演示 + 单元测试，**不是原科研系统或机器人仿真结果**。
+- [仓库自检 scripts/check_plan.py](scripts/check_plan.py)：检查内部导航、14日文件和报名关键节点。
+
 ## 快速导航
 
 | 我想做什么 | 入口 | 时间/用途 |
 |---|---|---|
+| 对照 MANSION 与同名 SceneWeaver | [RELATED_WORK.md](RELATED_WORK.md) | Day08，核心科研方法比较 |
+| 报名与跨学科面试 | [ADMISSION_PREP.md](ADMISSION_PREP.md) | 10/27–10/29 必须跟进 |
+| 跑 Mini Lab 实验与测试 | [minilab/](minilab/) | Day01–08 逐层练习 |
 | 看整体地图及简历项目对应关系 | [KNOWLEDGE_MAP.md](KNOWLEDGE_MAP.md) | 优先读 |
 | 看 14 天宏观排期 | [PLAN_14_DAYS.md](PLAN_14_DAYS.md) | 每天10h |
 | 打开当天课程与任务 | [DAILY/day-01.md](DAILY/day-01.md) → [全部 DAILY/](DAILY/) | 每天唯一执行页 |
@@ -61,8 +76,8 @@ flowchart TD
 | [Day 05](DAILY/day-05.md) | 10/24 | ROS2/TF/Nav2/接口 | P1 | 消息/TF与取消接口 |
 | [Day 06](DAILY/day-06.md) | 10/25 | Isaac Sim+Isaac Lab任务 | P0 | obs/action/reward/reset契约 |
 | [Day 07](DAILY/day-07.md) | 10/26 | BC/RL/Diffusion/VLA | P0 | 机器人学习数据流比较 |
-| [Day 08](DAILY/day-08.md) | 10/27 | 腾讯项目/SceneWeaver与基线 | P0 | BEHAVIOR式任务/公平基线 |
-| [Day 09](DAILY/day-09.md) | 10/28 | 低延迟语音与状态机 | P1 | 可打断会话状态机 |
+| [Day 08](DAILY/day-08.md) | 10/27 | MANSION/SceneWeaver对照与项目证据 | P0 | 相关工作对照+第一轮模拟+简历冻结 |
+| [Day 09](DAILY/day-09.md) | 10/28 | 低延迟语音与状态机 + 报名 | P1 | 可打断会话状态机+报名提交+首轮完整模拟 |
 | [Day 10](DAILY/day-10.md) | 10/29 | 3DGS/FLAME/SMPL-X | P1 | 表示/驱动/同步区分 |
 | [Day 11](DAILY/day-11.md) | 10/30 | FMCW与非接触测量 | P1 | 雷达信号链与干扰矩阵 |
 | [Day 12](DAILY/day-12.md) | 10/31 | SAR与跨源证据 | P2 | 多源证据可信度 |
@@ -83,6 +98,16 @@ flowchart TD
 - [Stanford BEHAVIOR-1K](https://behavior.stanford.edu/)：可交互具身任务与可复现基线。
 - [吉林大学 AVCLab 机器人学习课（B站）](https://www.bilibili.com/video/BV1TAbS6xELE)：比只学通用强化学习更贴近真实机器人状态、观测、动作。
 
+## v3 执行自检
+从仓库根目录运行：
+```bash
+python scripts/check_plan.py
+python -m unittest discover -s minilab/tests -v
+python -m minilab.validate --demo
+# 有可安装依赖时才运行：pip install -r minilab/requirements.txt && python -m minilab.z3_demo
+```
+若学习已经在别处开始，不要把 PROGRESS.md 的0小时当成真实学习0小时；它只是仓库未同步。
+
 ## v2 改进要点
 
 1. **修复时间预算不一致**：上一版 SAR 六讲约多小时却安排“视频2h”；现在必看 L1+L3，其他选修。Day 02/03/14 以官方文档或面试为主时不强行看视频。
@@ -92,3 +117,6 @@ flowchart TD
 5. **原项目真实性与保密优先**：新学会的知识≠过去做过的工作；不要把腾讯内部代码、非公开原型、电话号码和私密面试记录上传此公开库。
 
 > 本仓库是两周**面试准备**而不是对全部学科的精通证明。课程的部分 B站链接根据可检索标题/选集核验，并未逐条实际播放；配套官方来源供核对与失效替代。
+
+## v3 改进摘要
+新增可检查的相关工作、可执行学习原型、完整申请准备流程与每日差异化时间表。历史版本仍可从 [CHANGELOG.md](CHANGELOG.md) 及 Git 提交查阅。
