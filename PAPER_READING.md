@@ -1,4 +1,4 @@
-# 七个真实研究/基准入口：用于建立科研判断，不是 7 篇必须精读的论文
+# 机器人学习 + 空间生成研究/基准入口：建立可核验的科研判断
 
 > 目的：把“知识图谱很广”转成“能判断什么是真需求，如何测试”。面试不要求背数值；涉及第三方报告的指标请主动说明实验条件、来源与限制。
 
@@ -25,3 +25,12 @@
 
 - **工程/符号世界模型**：房间、物体、几何、关系和动作状态的结构化表示。你的 SceneWeaver/Einstein 问题主要先在这个层级。
 - **学习型动态世界模型**：从观测与动作预测未来状态/表征（可能在图像、潜变量或其它空间）。它们与上面可以结合，但不是同义词。**不应把“我有场景图”说成“已训练世界模型”。**
+
+## v3 重点补课：场景生成与具身任务（Day08 先读这三篇）
+| 工作 | 官方来源 | 研究问题与能力边界 | 对本人 SceneWeaver 的追问 |
+|---|---|---|---|
+| MANSION (CVPR 2026) | [正式论文](https://openaccess.thecvf.com/content/CVPR2026/html/Che_MANSION_Multi-floor_lANguage-to-3D_Scene_generatIOn_for_loNg-horizon_tasks_CVPR_2026_paper.html) / [代码](https://github.com/AgibotGeneral/MANSION) | 语言驱动多层建筑/跨层约束/定制和长时程任务基准；注意分别判断各项实验 | 自己是否产生了完整结构/实例/任务执行证据，还是仅组件？ |
+| 同名 SceneWeaver (NeurIPS 2025) | [作者主页](https://scene-weaver.github.io/) / [代码](https://github.com/Scene-Weaver/SceneWeaver) | 可扩展工具、场景生成、反馈与评测；名字相同不是同一工作 | 个人方法的研究义务、表示/状态与独立验证是否真的不同？ |
+| Holodeck (CVPR 2024) | [正式论文](https://openaccess.thecvf.com/content/CVPR2024/html/Yang_Holodeck_Language_Guided_Generation_of_3D_Embodied_AI_Environments_CVPR_2024_paper.html) | 文本→物体空间关系约束→布局优化，展示了导航训练应用 | 为什么视觉/空间关系成功仍可能任务失败？ |
+
+**实际任务**：逐篇各用 45–60 分钟找原图、评测指标、最强对照、限制。再按 [RELATED_WORK.md](RELATED_WORK.md) 填五维比较，明确标注自己项目中**现有证据**、**尚需实测**和**可能被更强基线覆盖**的假设。 
