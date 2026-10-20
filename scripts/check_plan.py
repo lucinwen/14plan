@@ -70,10 +70,16 @@ def check() -> list[str]:
     )
     task_index = ROOT / "TASK_GUIDES" / "README.md"
     worklog = ROOT / "TASK_GUIDES" / "WORKLOG_TEMPLATE.md"
+    help_page = ROOT / "TASK_GUIDES" / "HELP.md"
+    filled_example = ROOT / "TASK_GUIDES" / "WORKLOG_EXAMPLE.md"
     if not task_index.is_file():
         errors.append("Missing TASK_GUIDES/README.md")
     if not worklog.is_file():
         errors.append("Missing TASK_GUIDES/WORKLOG_TEMPLATE.md")
+    if not help_page.is_file():
+        errors.append("Missing TASK_GUIDES/HELP.md")
+    if not filled_example.is_file():
+        errors.append("Missing TASK_GUIDES/WORKLOG_EXAMPLE.md")
     for day_num in range(1, 15):
         id_ = f"{day_num:02d}"
         daily = ROOT / "DAILY" / f"day-{id_}.md"
@@ -87,6 +93,16 @@ def check() -> list[str]:
             continue
         guide_text = guide.read_text(encoding="utf-8")
         answer_text = answer.read_text(encoding="utf-8")
+        if len(guide_text.strip()) < 3000:
+            errors.append(f"Day {id_} task manual lacks operational depth")
+        if len(answer_text.strip()) < 1350:
+            errors.append(f"Day {id_} answer manual lacks worked reasoning")
+        if "## 进一步实操" not in guide_text and "## 实际任务补强" not in guide_text:
+            errors.append(f"Day {id_} lacks a topic-specific worked exercise")
+        if "## 补充参考" not in answer_text:
+            errors.append(f"Day {id_} lacks a worked topic-specific answer")
+        if "HELP.md" not in guide_text:
+            errors.append(f"Day {id_} missing troubleshooting navigation")
         if len(guide_text.strip()) < 1800:
             errors.append(f"Day {id_} task manual too sparse")
         if len(answer_text.strip()) < 900:
@@ -159,4 +175,4 @@ if __name__ == "__main__":
         for item in issues:
             print(" -", item)
         raise SystemExit(1)
-    print("PASS: 14 daily pages, 31 resources, 14 task/answer pairs, 600 min/day and Markdown paths")
+    print("PASS: 14 daily pages, 31 resources, 14 strengthened task/answer pairs, 600 min/day, help/sample and Markdown paths")

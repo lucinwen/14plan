@@ -1,5 +1,7 @@
 # Day 07｜任务操作手册：行为克隆、强化学习、Diffusion Policy、VLA
 
+> **使用提示**：本页的补充实操是原定10小时各阶段的**细化练习，不额外增加时长**；先自己提交预测/首次答案，再打开[独立参考答案](ANSWERS/day-07.md)。看不懂、视频打不开或缺少设备时，直接按[学习救援手册](HELP.md)操作。
+
 > 阅读路径：[每日计划](../DAILY/day-07.md) → 本页跟做 → [行为克隆、强化学习、Diffusion Policy、VLA对应的资源教程](../STUDY_GUIDES/README.md) → 完成后才看[参考答案/排错](ANSWERS/day-07.md)。这10小时均为有效学习，不含休息，时间段按累计小时，不是固定上课钟点。
 
 ## 今日唯一总目标
@@ -87,3 +89,20 @@
 **卡住时怎么做：**先回到本段引用的资源子教程找唯一需要的章节，不要乱搜合集；大型系统安装最多尝试90分钟，超时改用公开示例与纸面契约；只有写出假设、尝试、错误后才向AI求一条提示。答案页只用于复盘，别提前背。
 
 [每日计划](../DAILY/day-07.md) · [今日参考答案](ANSWERS/day-07.md) · [总教程目录](README.md)
+
+## 实际任务补强｜一份完整的机器人示范数据合同
+
+不需要今天训练VLA大模型。选“机器人抓杯”任务，分别写：
+~~~json
+{"episode_id":"example01","timestamp_s":0.0,
+ "observation":{"rgb":"synthetic_frame","joint_positions_rad":[0,0]},
+ "action":{"joint_delta_rad":[0.02,-0.03],"rate_hz":10},
+ "goal":"cup_on_table","evidence":"synthetic_example_only"}
+~~~
+这个只是字段示意，不是已采集的机器人数据。请自己解释`state`（可包含完整世界真值）与`observation`（真实传感可读的部分）为什么不一样。
+
+比较 **符号TAMP / BC / RL / Diffusion Policy / VLA**：各自训练数据/动作输出/控制粒度/失败风险。画`observation→policy→action chunk→controller→new observation`链，指出VLA不意味着能跳过控制接口。
+
+设计两个可证伪反例：训练只见正面摄像头、测试换视角；动作块一次输出较长轨迹但门突然关闭。分别讨论观测分布转移与闭环纠错频率；**动作维数和动作块长度依模型/机器人而异**。
+
+**验收**：给出训练/测试分割避免相同场景与物体泄漏的方法，说明“新增环境”并不会自动提升rollout成功率。

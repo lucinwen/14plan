@@ -1,5 +1,7 @@
 # Day 03｜逐任务操作手册：PDDL/FSM/TAMP：任务状态、动作和连续可行性
 
+> **使用提示**：本页的补充实操是原定10小时各阶段的**细化练习，不额外增加时长**；先自己提交预测/首次答案，再打开[独立参考答案](ANSWERS/day-03.md)。看不懂、视频打不开或缺少设备时，直接按[学习救援手册](HELP.md)操作。
+
 > **只按这个顺序学：**[每日总计划](../DAILY/day-03.md) → 本操作手册 → [对应资源子教程](../STUDY_GUIDES/README.md) → 亲自交产物 → **最后**看[参考答案与排错](ANSWERS/day-03.md)。这是10小时有效学习时间，不含休息；0:00是累计学习时长，并非固定钟点。
 >
 > 概念、纸面推演、AI辅助实验、本机实测、历史工作是不同证据等级；本学习手册不能替代企业历史成果或机器人物理成功证据。
@@ -97,3 +99,28 @@
 **卡住怎么办：**先返回该段对应 [资源子教程](../STUDY_GUIDES/README.md) 的准确小节；安装/下载超过90分钟停下，改作纸面验证；15分钟还不理解时，把你的假设、预测和具体错误发给Codex，要求先给一条提示、不要直接给最终答案。参考答案在[单独文件](ANSWERS/day-03.md)。
 
 [返回 Day 03](../DAILY/day-03.md) · [参考答案](ANSWERS/day-03.md) · [学习协议](../LEARNING_PROTOCOL.md) · [任务总目录](README.md)
+
+## 进一步实操｜自己手写一个真正可推演的任务规划表
+
+### A. 用一个小“世界状态”开始
+对象 `robot, roomA, roomB, doorD, keyK, cupC`；初态 `at(robot,roomA)`、`has(robot,keyK)`、`locked(doorD)`、`at(cupC,roomB)`，目标 `holding(robot,cupC)`。**为了不偷换问题，门宽/机械臂是否可达先作为独立连续条件，不塞进“已经解锁”一句话。**
+
+### B. 手工定义动作（第3阶段）
+| 动作 | 简化前置条件 | 简化后置条件 |
+|---|---|---|
+| unlock(D) | robot在门旁、有K、可操作锁 | not locked(D) |
+| open(D) | not locked(D)、可够到把手 | open(D) |
+| move(A,B) | at(robot,A)、connected(A,B)、open(D)、路径几何可行 | at(robot,B), not at(robot,A) |
+| pickup(C) | at(robot,roomOf(C))、C可抓/可达、手空 | holding(robot,C) |
+
+这张表是**教学层的动作语义**，不是完整可运行PDDL Domain；连续几何前置要通过TAMP或能力检查转换成可查询条件。
+
+### C. 按相同目标推三条路径（第4、5阶段）
+1. **成功候选**：有钥匙 + 解锁能力 + 门把可达 + 门净宽足够 → unlock/open/move/pickup，写出每次状态变化。
+2. **符号失败**：钥匙缺失且无替代动作 → 无合法unlock；不能偷偷把门设为打开。
+3. **运动失败**：符号层计划存在，但把手过高超出机械臂工作空间 → `reach(handle)` 无连续解；应将失败约束/对象反馈给任务层，改抓取策略或承认当前不可行。
+
+### D. 给MiniLab一个可证伪任务
+从 `python -m minilab.validate` 的基线改 `locked=true`、改拥有keys/能力、最后去掉`grasp`，依次先预测 `rule_feasible / blocked_state / blocked_action` 等受限状态。注意MiniLab只使用简化的锁/钥匙规则，**没有机械臂IK或真实开门动作**；它的“规则可行”不证明你已实现TAMP。
+
+**今日交付**：一张包含每步状态的表、三条失败分支图、受限检查记录、1分钟“为什么PDDL与TAMP不是一个东西”的口述。

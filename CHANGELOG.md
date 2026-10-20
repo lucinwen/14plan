@@ -47,3 +47,13 @@
 - 新增 [TASK_GUIDES/WORKLOG_TEMPLATE.md](TASK_GUIDES/WORKLOG_TEMPLATE.md) 用于本地分阶段记录预测、本人操作、实测或未运行、反例与复盘。
 - 所有DAILY、主README、宏观计划、学习协议、进度与Codex教练均已接入新操作层；旧资源教程和全部Git历史保留。
 - CI自动验证阶段数、时间预算、答案配对、Markdown链接与原MiniLab/Z3测试。
+
+
+## v6｜2026-10-20 · 完整实操示范和错题救援
+- 基于 v5 已有14份任务操作手册和14份独立答案，**逐天增强**真实可推演的输入/公式/状态机/接口/故障案例，不重新搭课程。
+- Day01–04：SE(3)变换数值、Z3六组SAT/UNSAT、PDDL/TAMP动态状态、二连杆FK/IK/Jacobian手算。
+- Day05–08：ROS2/Nav2接口合同、Isaac环境任务契约、具身学习示范数据Schema、MANSION/SceneWeaver/Holodeck真实论文证据对照。
+- Day09–12：流式语音打断状态机、数字人表示与同步、FMCW数值及误报、SAR时空证据和可信度。
+- Day13–14：Rove双端变换手算/弱网授权安全、两轮模拟面试、个人真实贡献四格核查。
+- 新增 [HELP救援手册](TASK_GUIDES/HELP.md)、[Day01填好示范](TASK_GUIDES/WORKLOG_EXAMPLE.md)；已有[空白记录](TASK_GUIDES/WORKLOG_TEMPLATE.md)沿用。
+- 更强的自动检查确保14个深化案例、14份答案与导航齐全；新内容嵌入原定10小时，不增加学习负担；历史Git提交保持。

@@ -35,3 +35,25 @@
 - 先保存首次原始答案（不美化），再保存对照参考后的修订答案，登记D+1/D+3/D+7。若无环境，标记“纸面已推导/未运行”，不填PASS。
 
 [返回操作手册](../day-02.md) · [当天计划](../../DAILY/day-02.md) · [课程索引](../../STUDY_GUIDES/README.md)
+
+## 补充参考答案｜六个案例与UNSAT Core的正确用法
+
+**为何3×3装不下两块2×2 AABB：** 要求“无内部重叠”，必须在x或y某一方向相隔2+2=4的总距离；房屋宽高都只有3，故四个方向均不可能。旋转不被允许；如果题目改成可旋转形状或可压缩家具，则要**重建模型**而非偷偷放松边界。
+
+**六组参考判断：**
+- S1：A=(0,0)、B=(2,0) 即可，墙边允许接触；S2可复用同布局；S3单房(0,0)。
+- U1：两房不能沿任意轴分开4m；U2：宽度1m容不下单房宽2m。
+- U3：同一 `door_width` 同时需要至少0.8和最多0.5，无数值满足；标记两条断言后可得到支持冲突解释的 core。
+
+**UNSAT Core不是唯一最小修复集。** 对标记的断言集合，core表明其中一组在现有背景下不可同时满足。约束可能都正确：例如消防规范要求门宽至少0.8，但某资产宽度参数又将门设置最多0.5，此时应请求改变资产/约束设计或确认需求优先级；不是“删掉消防约束”。
+
+**实测日志示例（运行前只是预期）：**
+~~~text
+Case: U3, status=expected unsat
+constraints: door_width >= 0.8, door_width <= 0.5
+assumptions: both constraints hard
+possible resolution: change available asset / clarify feasibility, not auto-drop hard req
+not checked: 3D door geometry, robot motion, contact dynamics
+~~~
+
+**易错定位：** 若输出意外SAT，检查是否误用了两个不同门变量、把`Or`写在应为`And`的地方或缺少尺寸约束；若UNSAT但不知道原因，给断言命名，缩减到最小复现，再做增量`push/pop`。如果卡在安装，纸面推导与实际运行分开登记。

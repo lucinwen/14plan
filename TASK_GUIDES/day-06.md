@@ -1,5 +1,7 @@
 # Day 06｜任务操作手册：Isaac Sim / Isaac Lab与机器人训练任务契约
 
+> **使用提示**：本页的补充实操是原定10小时各阶段的**细化练习，不额外增加时长**；先自己提交预测/首次答案，再打开[独立参考答案](ANSWERS/day-06.md)。看不懂、视频打不开或缺少设备时，直接按[学习救援手册](HELP.md)操作。
+
 > 阅读路径：[每日计划](../DAILY/day-06.md) → 本页跟做 → [Isaac Sim / Isaac Lab与机器人训练任务契约对应的资源教程](../STUDY_GUIDES/README.md) → 完成后才看[参考答案/排错](ANSWERS/day-06.md)。这10小时均为有效学习，不含休息，时间段按累计小时，不是固定上课钟点。
 
 ## 今日唯一总目标
@@ -87,3 +89,22 @@
 **卡住时怎么做：**先回到本段引用的资源子教程找唯一需要的章节，不要乱搜合集；大型系统安装最多尝试90分钟，超时改用公开示例与纸面契约；只有写出假设、尝试、错误后才向AI求一条提示。答案页只用于复盘，别提前背。
 
 [每日计划](../DAILY/day-06.md) · [今日参考答案](ANSWERS/day-06.md) · [总教程目录](README.md)
+
+## 实际任务补强｜从UE场景转为具身训练合同
+
+在第3阶段写下面的**示意**配置（它不是可以直接运行的Isaac Lab配置）：
+
+~~~yaml
+scene: {units: m, collision: [floor,walls,door,cup], door_joint: required}
+robot: {model: required, footprint_m: 0.55, joint_limits: required}
+observation: {rgbd: timestamped, joint_state: timestamped}
+action: {base_velocity: m_per_s, gripper: open_close, frequency_hz: required}
+task: {goal: cup_held, reset: restore_all_dynamic_state, seed: logged}
+termination: [success, timeout, safety_stop]
+~~~
+
+把每项标明：**谁产生、单位/坐标、谁消费、缺失会怎样**。15项核查至少涵盖单位、外参、碰撞、质量/关节、传感时序、footprint、action控制频率、reset、success、seed和超时。
+
+第4–5阶段按三个反例分析：①视觉Mesh无碰撞会穿墙；②门贴图无铰链，无法推门；③训练策略直接读取现实中无法观察的`door_locked`真值，会形成不公平特权观测。每个反例写`症状→缺哪个接口→如何独立验证`。
+
+**闭卷验收**：能分别说出UE资产、Isaac Sim物理世界、Isaac Lab任务/训练的责任。跑不了Isaac并不扣虚构分，但必须将本练习标记为合同设计而非实机/仿真验证。

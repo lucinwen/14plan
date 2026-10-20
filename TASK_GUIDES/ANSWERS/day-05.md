@@ -34,3 +34,19 @@ Planner产生路径/轨迹目标，Controller根据当前状态持续计算控�
 采用[五维20分制](../../LEARNING_PROTOCOL.md)：16–20可推进；12–15补一个反例并闭卷复述；≤11先修订最弱概念。保留首次录音与修订答题，只存本地。答出正确结论但未能解释因果或证据范围不能拿满分。
 
 [回到任务手册](../day-05.md) · [每日计划](../../DAILY/day-05.md) · [资源教程](../../STUDY_GUIDES/README.md)
+
+## 补充参考解｜ROS2导航闭环
+
+~~~text
+Task Planner → Nav2 Action Server(goal in map frame)
+     → Global Planner(path) → Local Controller(cmd_vel)
+     → Robot + Sensors → odom/TF/costmap → feedback/result → Task Planner
+~~~
+
+`map`是全局地图参考帧，`odom`可连续跟踪短时运动但会漂移，`base_link`为机器人本体坐标。系统必须提供有效时间戳的变换；TF树不自动证明定位准确。
+
+**题一：门窄**。有声明拓扑路径，但底盘+安全余量大于门净宽；全局/局部规划可拒绝或控制受阻。应检查footprint/costmap和门状态，而不是只重新发送goal。
+
+**题二：门锁**。物理地图可能没有动态“锁”状态；机器人没有开锁技能时，高层任务不可行，不是ROS2话题编排的故障。
+
+**概念纠错**：Action提供goal、反馈、取消、结果机制，不能保证执行成功；URDF提供结构/关节而非实时世界位姿；Nav2 Planner做路径、Controller跟踪执行命令，二者角色不同。回答必须能在自己图上指出哪一个模块检测到失败、哪一个模块拥有修复权。
