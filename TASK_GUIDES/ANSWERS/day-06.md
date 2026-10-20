@@ -34,3 +34,12 @@ reward可为训练用密集反馈，success是明确的任务达成判据；两�
 采用[五维20分制](../../LEARNING_PROTOCOL.md)：16–20可推进；12–15补一个反例并闭卷复述；≤11先修订最弱概念。保留首次录音与修订答题，只存本地。答出正确结论但未能解释因果或证据范围不能拿满分。
 
 [回到任务手册](../day-06.md) · [每日计划](../../DAILY/day-06.md) · [资源教程](../../STUDY_GUIDES/README.md)
+
+
+## Day06 Task Contract 参考字段与反例
+
+一个可审查任务至少需要：`scene`（房间/门/物体、碰撞/单位），`robot`（能力/关节/控制接口），`initial_state`（对象状态），`observations`（RGB-D/关节/时间戳/参考帧），`actions`（单位、频率、目标），`reward`，`success_checker`，`reset`，`termination/truncation`，`seed`，`episode_logs`。这些是**学习协议示意字段**，并非当前Isaac Lab具体Python类的完整签名。
+
+三个典型错误：UE画面漂亮但缺接触体→不可据此做可复现实物操作；只奖励靠近目标→可能出现靠近但没有交付的奖励投机；重置机器人但门保持打开→两次episode初态不同，不能公平比较成功率。
+
+**核心**：Isaac Sim提供物理/传感仿真基础；Isaac Lab组织任务/机器人学习接口，二者可能联用但不等价。MiniLab的`rule_feasible`不含机器人策略、传感噪声、碰撞轨迹、物理执行，不可当成功rollout。
