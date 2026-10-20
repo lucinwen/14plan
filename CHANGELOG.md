@@ -33,3 +33,10 @@
 - 新增 [scripts/check_plan.py](scripts/check_plan.py) 和 GitHub Actions；检查内部链接、14天文件、截止节点与minilab单元测试。
 - 更新课程/论文/题库（57→73问）/阶段考核/进度表。原有资源没有整体替换，保密与贡献边界继续生效。
 - 本版采用 PR [#1](https://github.com/venividici/14plan/pull/1) 进行审阅、CI和合并，保留 Git 历史与差异记录。
+
+
+## v4｜2026-10-20 · 逐资源实操教程
+- 为全部 **22份课程/工具资源 R01–R22、9份论文/研究 P01–P09** 新增独立[学习指南](STUDY_GUIDES/README.md)；不删除旧版课程及项目。
+- 所有14份DAILY页面都改为有子教程链接，每份详细说明所学章节、要跳过的部分、练习和验收。
+- 用真实B站目录核对R01、R02、R09、R13、R15、MIT R16，并修正R11、R14、R22错误入口。
+- README、RESOURCES、PLAN_14_DAYS均指向一键可进入的教程目录；自动测试验证教程完整性和链接。
