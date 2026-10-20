@@ -87,3 +87,22 @@
 **卡住时怎么做：**先回到本段引用的资源子教程找唯一需要的章节，不要乱搜合集；大型系统安装最多尝试90分钟，超时改用公开示例与纸面契约；只有写出假设、尝试、错误后才向AI求一条提示。答案页只用于复盘，别提前背。
 
 [每日计划](../DAILY/day-06.md) · [今日参考答案](ANSWERS/day-06.md) · [总教程目录](README.md)
+
+## 实际任务补强｜从UE场景转为具身训练合同
+
+在第3阶段写下面的**示意**配置（它不是可以直接运行的Isaac Lab配置）：
+
+~~~yaml
+scene: {units: m, collision: [floor,walls,door,cup], door_joint: required}
+robot: {model: required, footprint_m: 0.55, joint_limits: required}
+observation: {rgbd: timestamped, joint_state: timestamped}
+action: {base_velocity: m_per_s, gripper: open_close, frequency_hz: required}
+task: {goal: cup_held, reset: restore_all_dynamic_state, seed: logged}
+termination: [success, timeout, safety_stop]
+~~~
+
+把每项标明：**谁产生、单位/坐标、谁消费、缺失会怎样**。15项核查至少涵盖单位、外参、碰撞、质量/关节、传感时序、footprint、action控制频率、reset、success、seed和超时。
+
+第4–5阶段按三个反例分析：①视觉Mesh无碰撞会穿墙；②门贴图无铰链，无法推门；③训练策略直接读取现实中无法观察的`door_locked`真值，会形成不公平特权观测。每个反例写`症状→缺哪个接口→如何独立验证`。
+
+**闭卷验收**：能分别说出UE资产、Isaac Sim物理世界、Isaac Lab任务/训练的责任。跑不了Isaac并不扣虚构分，但必须将本练习标记为合同设计而非实机/仿真验证。
