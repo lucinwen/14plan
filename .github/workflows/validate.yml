@@ -14,5 +14,7 @@ jobs:
           python-version: '3.11'
       - name: Check plan links and milestones
         run: python scripts/check_plan.py
-      - name: Test bounded learning examples
+      - name: Install optional Z3 example dependency
+        run: python -m pip install -r minilab/requirements.txt
+      - name: Test bounded rule checks and Z3 example
         run: python -m unittest discover -s minilab/tests -v
