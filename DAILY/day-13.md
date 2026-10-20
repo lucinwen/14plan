@@ -14,7 +14,16 @@
 - 时间戳、跟踪置信度、平滑/预测、弱网与跟踪丢失降级
 - 姿态重定向、触觉意图、用户授权、安全边界
 
-## 实际上要学的课和章节
+## 开始学习：先打开资源子教程（不要自己乱选整套课程）
+
+- **[R21 子教程](../STUDY_GUIDES/R21.md)**：必修：OpenXR参考空间。
+- **[R15 子教程](../STUDY_GUIDES/R15.md)**：必修：WebRTC P1/P2/P4/P5/P6。
+- **[R01 子教程](../STUDY_GUIDES/R01.md)**：回看：坐标变换。
+
+**使用顺序**：先做今日前测/复习 → 点开标“必修”的子教程 → 按教程指示看指定分P或文档小节 → 在教程里暂停做题 → 完成今日验收。选修/进阶材料有疑点或学有余力时才开；**不是今天必须看完的清单**。
+**若视频目录/版本不一致**，以子教程的“来源核验/官方入口”说明为准，切勿猜章节号。
+
+## 原始课程/论文入口（具体怎么学，以子教程为准）
 
 - [R21 · VIEW/LOCAL/xrLocateSpace/位置有效标记≤45min](https://registry.khronos.org/OpenXR/specs/1.1/html/xrspec.html#spaces)
 - [R15 · Signaling/ICE/STUN/TURN/RTCDataChannel≤45min](https://webrtc.org/getting-started/peer-connections)

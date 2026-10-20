@@ -12,6 +12,8 @@
 | Interactive evaluation environments | [Stanford BEHAVIOR-1K](https://behavior.stanford.edu/) | 人需要机器人完成什么？谓词/任务状态的范围？任务成功率和仿真可用性如何验证？ | Day 08，必看 |
 | 机器人学习对比 | [robomimic](https://robomimic.github.io/docs/introduction/implemented_algorithms.html) | BC 与 Diffusion 输出/数据依赖差异？训练集分布转移时如何失败？哪些评测是 rollout 而非离线指标？ | Day 07，选看 |
 
+**论文现在也有单独的 [P01–P09 资源子教程](STUDY_GUIDES/README.md)**。Day08优先 [P06 MANSION](STUDY_GUIDES/P06.md)、[P07 同名SceneWeaver](STUDY_GUIDES/P07.md)、[P09个人项目](STUDY_GUIDES/P09.md)；不要求一天读完全部9份资料。
+
 ## 精读一篇只花 45–60 分钟，按这个顺序
 
 1. **3 分钟**：这一研究到底想解决什么痛点？一句话讲清。

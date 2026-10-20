@@ -14,7 +14,20 @@ Behavior Cloning 是专家监督、RL 依奖励交互、Diffusion Policy 建模�
 - RL 的训练反馈机制，与模仿学习的差别
 - VLA / 世界模型的输入输出；训练环境与泛化评测
 
-## 实际上要学的课和章节
+## 开始学习：先打开资源子教程（不要自己乱选整套课程）
+
+- **[R18 子教程](../STUDY_GUIDES/R18.md)**：必修：AVCLab State/Observation/Action/Chunking。
+- **[R17 子教程](../STUDY_GUIDES/R17.md)**：必修：LeRobot数据—策略—评测。
+- **[R07 子教程](../STUDY_GUIDES/R07.md)**：选读：强化学习概述。
+- **[R08 子教程](../STUDY_GUIDES/R08.md)**：选读：robomimic。
+- **[P01 子教程](../STUDY_GUIDES/P01.md)**：进阶：Diffusion Policy原始研究。
+- **[P02 子教程](../STUDY_GUIDES/P02.md)**：进阶：π0论文。
+- **[P03 子教程](../STUDY_GUIDES/P03.md)**：进阶：OpenVLA。
+
+**使用顺序**：先做今日前测/复习 → 点开标“必修”的子教程 → 按教程指示看指定分P或文档小节 → 在教程里暂停做题 → 完成今日验收。选修/进阶材料有疑点或学有余力时才开；**不是今天必须看完的清单**。
+**若视频目录/版本不一致**，以子教程的“来源核验/官方入口”说明为准，切勿猜章节号。
+
+## 原始课程/论文入口（具体怎么学，以子教程为准）
 
 - [R18 · 状态/观测、动作空间、BC、Action Chunking约61min](https://www.bilibili.com/video/BV1TAbS6xELE)
 - [R17 · Teleoperate→Record→Train→Deploy 阅读约25min](https://huggingface.co/docs/lerobot/index)

@@ -14,7 +14,20 @@
 - 多模型异步任务：任务 ID、重试、幂等、回填、状态错误
 - 区分团队展示成果、自己实现组件、正在研究的假设
 
-## 实际上要学的课和章节
+## 开始学习：先打开资源子教程（不要自己乱选整套课程）
+
+- **[P06 子教程](../STUDY_GUIDES/P06.md)**：必修：MANSION论文精读。
+- **[P07 子教程](../STUDY_GUIDES/P07.md)**：必修：NeurIPS同名SceneWeaver比较。
+- **[P09 子教程](../STUDY_GUIDES/P09.md)**：必修：个人项目真实研究状态。
+- **[P08 子教程](../STUDY_GUIDES/P08.md)**：选读：Holodeck。
+- **[R20 子教程](../STUDY_GUIDES/R20.md)**：选读：BEHAVIOR-1K。
+- **[P04 子教程](../STUDY_GUIDES/P04.md)**：进阶：BEHAVIOR研究阅读。
+- **[P05 子教程](../STUDY_GUIDES/P05.md)**：备用：MIT科研阅读。
+
+**使用顺序**：先做今日前测/复习 → 点开标“必修”的子教程 → 按教程指示看指定分P或文档小节 → 在教程里暂停做题 → 完成今日验收。选修/进阶材料有疑点或学有余力时才开；**不是今天必须看完的清单**。
+**若视频目录/版本不一致**，以子教程的“来源核验/官方入口”说明为准，切勿猜章节号。
+
+## 原始课程/论文入口（具体怎么学，以子教程为准）
 
 - [MANSION · CVPR 2026 原文与方法图，约55min](https://openaccess.thecvf.com/content/CVPR2026/html/Che_MANSION_Multi-floor_lANguage-to-3D_Scene_generatIOn_for_loNg-horizon_tasks_CVPR_2026_paper.html)
 - [同名 SceneWeaver · NeurIPS 2025 原始方法与代码，约35min](https://scene-weaver.github.io/)
@@ -38,6 +51,8 @@
 ## 带着真实问题学（案例）
 
 重点不是把自己的 SceneWeaver 写成已等价于 MANSION，而是比较 **MANSION、NeurIPS 2025 同名 SceneWeaver、Holodeck 与本人项目** 的问题、表示、生成和任务评测；再用已确认、未完成、未来假设三栏记录自身证据。腾讯项目只使用可披露的高层能力描述。
+
+**注意**：MANSION/NeurIPS SceneWeaver/Holodeck的论文不能只凭标题下结论；比较需要原论文证据。“自己的SceneWeaver”研究目标与已实现组件也必须分开。你的主要产物是 **方法对照、一个独立失败案例和自己的项目实际完成度表**，不是一天复现三篇论文。
 
 ## 关键原理与最小验证
 

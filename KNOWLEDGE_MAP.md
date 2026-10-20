@@ -96,3 +96,6 @@ S -.支持.-> E
 - 学习型 **动态世界模型**：从观测和行动预测未来状态/视觉/潜变量，常用于规划/策略学习；不等于带门房间图，也不等于 3DGS。
 
 R18 的 π0、[LeRobot](https://huggingface.co/docs/lerobot/index) 与 [MIT Task-and-Motion Planning](https://manipulation.mit.edu/) 适用于不同系统层级。能说清差异比只追求新术语更重要。
+
+## v4 开始学习入口
+完整地图建好之后不用自己漫无目的地搜长课程：从 [Day01](DAILY/day-01.md) → [R01分P详细教程](STUDY_GUIDES/R01.md) → [R16 MIT定向教程](STUDY_GUIDES/R16.md) → Day01反例验收。其它日/资源也有相同的 [子教程](STUDY_GUIDES/README.md)。
