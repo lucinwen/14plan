@@ -19,7 +19,7 @@ def check() -> list[str]:
     required = [
         "RELATED_WORK.md", "ADMISSION_PREP.md", "minilab/README.md",
         "minilab/validate.py", "minilab/tests/test_validate.py",
-        "PLAN_14_DAYS.md", "PAPER_READING.md",
+        "PLAN_14_DAYS.md", "PAPER_READING.md", "PROJECT_GUIDES/BELEAN.md",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -185,6 +185,23 @@ def check() -> list[str]:
             target = (md.parent / unquote(link)).resolve()
             if not target.is_relative_to(ROOT) or not target.exists():
                 errors.append(f"{rel}: broken local link {raw}")
+    # Belean is the current project case; prevent old XR remote-operation claims
+    # from surviving unnoticed in public learning material.
+    case_paths = [
+        "DAILY/day-13.md", "TASK_GUIDES/day-13.md",
+        "TASK_GUIDES/ANSWERS/day-13.md", "STUDY_GUIDES/R15.md",
+        "STUDY_GUIDES/R21.md", "CV_EVIDENCE_AUDIT.md",
+    ]
+    for rel in case_paths:
+        page = ROOT / rel
+        if not page.is_file():
+            errors.append(f"Missing Belean project integration: {rel}")
+        elif "Belean" not in page.read_text(encoding="utf-8"):
+            errors.append(f"Current project case not set to Belean in {rel}")
+    for md in md_files:
+        if re.search(r"\\bRove\\b", md.read_text(encoding="utf-8"), flags=re.I):
+            errors.append(f"Outdated Rove reference in {md.relative_to(ROOT)}")
+
     admission = ROOT / "ADMISSION_PREP.md"
     if admission.is_file():
         page = admission.read_text(encoding="utf-8")
@@ -200,4 +217,4 @@ if __name__ == "__main__":
         for item in issues:
             print(" -", item)
         raise SystemExit(1)
-    print("PASS: 14 daily pages, 31 resources, 14 strengthened task/answer pairs, 600 min/day, help/sample and Markdown paths")
+    print("PASS: 14-day guided course, Belean project integration, 600min/day, and Markdown paths")
