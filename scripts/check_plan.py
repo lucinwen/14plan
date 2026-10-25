@@ -199,7 +199,7 @@ def check() -> list[str]:
         elif "Belean" not in page.read_text(encoding="utf-8"):
             errors.append(f"Current project case not set to Belean in {rel}")
     for md in md_files:
-        if re.search(r"\\bRove\\b", md.read_text(encoding="utf-8"), flags=re.I):
+        if re.search(r"\bRove\b", md.read_text(encoding="utf-8"), flags=re.I):
             errors.append(f"Outdated Rove reference in {md.relative_to(ROOT)}")
 
     admission = ROOT / "ADMISSION_PREP.md"
