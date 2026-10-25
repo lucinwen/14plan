@@ -75,3 +75,7 @@
 - [R14](STUDY_GUIDES/R14.md)：旧Bvid打开SAR L6，已给L1、L3正确独立入口。
 - [R22](STUDY_GUIDES/R22.md)：旧Bvid是Capon测角而不是呼吸演示，已改到[BV1b4hSe4EEV](https://www.bilibili.com/video/BV1b4hSe4EEV/)。
 这些只核验了公开视频**选集标题和时长元数据**，没有假装逐帧观看整个课程；原理请以原作者/官方资料为准。
+
+
+## Belean 比邻专项实践（Day13）
+**先读 [项目学习指南](PROJECT_GUIDES/BELEAN.md)**，再用[R15 WebRTC](STUDY_GUIDES/R15.md)、[R21 WebXR/OpenXR空间参考](STUDY_GUIDES/R21.md)和[R01 SE(3)](STUDY_GUIDES/R01.md)补基础。Belean的已实现软件原型与尚需实机/真实双人验证的3DGS空间、MetaHuman和实体触觉不可混写；私有仓原代码不复制到此Public教程。

@@ -86,3 +86,7 @@ flowchart LR
 
 ## v3 实操与评价
 全程贯穿 [minilab/](minilab/) 的模型合法性/可通行性/任务可执行反例，并在 Day08 按 [RELATED_WORK.md](RELATED_WORK.md) 区分论文作者已展示、自己已验证与拟研究目标；最终演示不能冒充机器人物理执行。
+
+
+## Belean案例（Day13）
+此前泛称XR空间共在的项目练习，已定向改为[Belean 比邻](PROJECT_GUIDES/BELEAN.md)：真实原型可学习双人主场协商、空间版本与双方ready、WebRTC媒体/WebSocket状态、WebXR手动配准与触碰许可。它不是已完成实体机器人遥操作，也不能把研究中的3DGS/MetaHuman/实体触觉算作已落地。按[Day13](DAILY/day-13.md)及[任务操作手册](TASK_GUIDES/day-13.md)执行。
