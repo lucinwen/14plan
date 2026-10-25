@@ -45,3 +45,6 @@
 按 [LEARNING_PROTOCOL](../LEARNING_PROTOCOL.md) 五维（概念、因果、接口、验证、真实性）给闭卷答辩评分，低于要求时只复习关键错误，不强行赶新课程。
 
 [返回仓库首页](../README.md) · [所有资源教程](../STUDY_GUIDES/README.md) · [进度表](../PROGRESS.md)
+
+
+**最新个人研究/产品案例**：[Belean 比邻专项技术路线](../PROJECT_GUIDES/BELEAN.md) 与 [Day13](day-13.md) 已取代过去按XR机器人遥操作设计的案例；Day10也加入了数字人/空间表示向Belean的迁移练习。
