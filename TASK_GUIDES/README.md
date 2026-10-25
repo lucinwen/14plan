@@ -33,7 +33,7 @@
 | 10 | 3DGS/FLAME/SMPL-X数字人 | [Day10](../DAILY/day-10.md) | [具体怎么做](day-10.md) | [参考答案/排错](ANSWERS/day-10.md) |
 | 11 | FMCW/陪伴机器人误报与安全 | [Day11](../DAILY/day-11.md) | [具体怎么做](day-11.md) | [参考答案/排错](ANSWERS/day-11.md) |
 | 12 | SAR/天穹慧眼可信感知 | [Day12](../DAILY/day-12.md) | [具体怎么做](day-12.md) | [参考答案/排错](ANSWERS/day-12.md) |
-| 13 | Rove XR/WebRTC/触觉安全及二轮模拟 | [Day13](../DAILY/day-13.md) | [具体怎么做](day-13.md) | [参考答案/排错](ANSWERS/day-13.md) |
+| 13 | Belean双人空间共在、授权触碰及二轮模拟 | [Day13](../DAILY/day-13.md) | [具体怎么做](day-13.md) | [参考答案/排错](ANSWERS/day-13.md) |
 | 14 | 全简历真实贡献与全真面试 | [Day14](../DAILY/day-14.md) | [具体怎么做](day-14.md) | [参考答案/排错](ANSWERS/day-14.md) |
 
 ## 每天“完成”必须满足

@@ -29,6 +29,9 @@
 - [Day01填好的合成学习记录](TASK_GUIDES/WORKLOG_EXAMPLE.md)：看填写质量和证据边界，不是假装你已学习或运行。
 - [空白工作日志](TASK_GUIDES/WORKLOG_TEMPLATE.md)：复制到本地私有目录，**不要在Public仓库存真实个人回执/企业资料**。
 
+## Belean 比邻｜个人项目案例已经升级
+[**Belean 专项项目学习指南**](PROJECT_GUIDES/BELEAN.md)是新入口：围绕异地双人选择空间、位姿与媒体同步、版本一致性和可撤回触碰，而非把它硬包装成机器人遥操作。Belean源仓为私有，本Public学习仓只放匿名/合成教学案例，3DGS真人、真实双设备与实体触觉仍属待验证研究。
+
 ## 今天就这样开始
 
 1. **先读 [知识地图](KNOWLEDGE_MAP.md)**（15–20分钟），建立两条技术主线；不要把世界结构化表示与学习型世界模型混为一谈。
@@ -102,7 +105,7 @@ flowchart TD
 | [Day 10](DAILY/day-10.md) | 10/29 | 3DGS/FLAME/SMPL-X | P1 | 表示/驱动/同步区分 |
 | [Day 11](DAILY/day-11.md) | 10/30 | FMCW与非接触测量 | P1 | 雷达信号链与干扰矩阵 |
 | [Day 12](DAILY/day-12.md) | 10/31 | SAR与跨源证据 | P2 | 多源证据可信度 |
-| [Day 13](DAILY/day-13.md) | 11/01 | XR配准/WebRTC | P2 | 双端坐标+失联降级 |
+| [Day 13](DAILY/day-13.md) | 11/01 | **Belean 比邻：远程空间共在** | P2 | 双方就位、空间版本、媒体/位姿、触碰安全 |
 | [Day 14](DAILY/day-14.md) | 11/02 | 全真模拟面试 | P0 | 两轮模拟+真实贡献核查 |
 
 ## 每日 10 小时怎么花
